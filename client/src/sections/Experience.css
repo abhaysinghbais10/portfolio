@@ -1,0 +1,294 @@
+/* ===== Experience Section ===== */
+.experience-section {
+  padding: 8rem 0;
+  background: var(--color-bg-secondary);
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+
+/* Subtle top fade from hero/about */
+.experience-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--color-bg-primary), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.experience-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Section Header ── */
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  background: rgba(30, 144, 255, 0.1);
+  border: 1px solid rgba(30, 144, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+}
+
+.experience-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.experience-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ── Timeline Container ── */
+.experience-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2.5rem; /* space for the vertical line + dot */
+}
+
+/* Vertical line */
+.timeline-line {
+  position: absolute;
+  left: 0.65rem;          /* align with dot center */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    rgba(229, 46, 113, 0.6),
+    transparent
+  );
+  transform-origin: top;
+  border-radius: 2px;
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Single Timeline Item ── */
+.timeline-item {
+  position: relative;
+}
+
+/* Dot marker */
+.timeline-dot {
+  position: absolute;
+  left: -2.5rem;          /* pull to sit on the line */
+  top: 1.6rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.timeline-dot__inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+}
+
+/* ── Experience Card ── */
+.experience-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(30, 144, 255, 0.12);
+  border-color: rgba(30, 144, 255, 0.35);
+}
+
+/* Card header row */
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exp-role {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.exp-company-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.exp-company {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+
+.exp-separator {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.exp-location {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* Date badge */
+.exp-dates__badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-card-border);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  white-space: nowrap;
+}
+
+/* Divider */
+.exp-divider {
+  height: 1px;
+  background: var(--color-card-border);
+  margin: 1.2rem 0;
+}
+
+/* Responsibilities */
+.exp-responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.exp-responsibility {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.exp-bullet {
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 6rem 0;
+  }
+
+  .experience-timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline-dot {
+    left: -2rem;
+    top: 1.4rem;
+    width: 14px;
+    height: 14px;
+  }
+  .timeline-dot__inner {
+    width: 6px;
+    height: 6px;
+  }
+
+  .timeline-line {
+    left: 0.45rem;
+  }
+
+  .experience-card {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .exp-card-header {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .exp-role {
+    font-size: 1.05rem;
+  }
+
+  .exp-responsibility {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-timeline {
+    padding-left: 1.75rem;
+  }
+  .timeline-dot {
+    left: -1.75rem;
+  }
+  .timeline-line {
+    left: 0.3rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .experience-card {
+    transition: none !important;
+  }
+  .experience-card:hover {
+    transform: none;
+  }
+}
